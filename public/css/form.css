@@ -1,0 +1,61 @@
+.personal-data {
+    margin-left: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input {
+    font-size: 14px;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 20px;
+    color: white;
+    background: none;
+    border: none;
+    border-bottom: 2px solid #494949;
+}
+
+.checkbox {
+    display: flex;
+}
+
+textarea {
+    font-size: 14px;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 20px;
+    color: white;
+    background: none;
+    border: none;
+    border: 2px solid #494949;
+    resize: none;
+}
+
+textarea::-webkit-scrollbar {
+    width: 7px;
+
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #494949;
+    border-radius: 5px;
+}
+
+button {
+    width: 150px;
+    font-size: 14px;
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 20px;
+    background: #494949;
+    color: #D9D9D9;
+    border: none;
+    padding: 10px 0;
+}
+
+button:hover {
+    cursor: pointer;
+    background: indianred;
+}
+
