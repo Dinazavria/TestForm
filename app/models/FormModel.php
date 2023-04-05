@@ -1,12 +1,17 @@
 <?php
 
-class Form
-{
+require 'DB.php';
+class FormModel {
     private $name;
     private $phone;
     private $email;
     private $message;
     private $personal;
+    private $_db;
+
+    public function __construct() {
+        $this->_db = DB::getInstsnce();
+    }
 
     public function setData($name, $phone, $email, $message, $personal) {
         $this->name = $name;
@@ -24,7 +29,14 @@ class Form
             return "Email слишком короткий";
         }
         else
-            return "OK";
+            return "Сообщение отправлено";
+    }
+
+    public function addMessage() {
+        $sql = 'INSERT INTO messages(name, number, email, comment, personal) VALUES(:name, :number, :email, :comment, :personal)';
+        $query = $this->_db->prepare($sql);
+
+        $query->execute(['name'=>$this->name, 'number'=>$this->phone, 'email'=>$this->email, 'comment'=>$this->message, 'personal'=>$this->personal]);
     }
 
 

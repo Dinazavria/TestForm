@@ -24,13 +24,15 @@
 
             </div>
             <div class="contact-form">
-                <form action="index.php" method="post">
-                    <input type="text" placeholder="Ваше имя">
-                    <input type="tel" placeholder="Ваш номер телефона">
-                    <input type="email" placeholder="Ваш email">
-                    <textarea placeholder="Ваш комментарий" rows="3"></textarea>
-                    <div class="checkbox"><input type="checkbox" id="personal"><label class="personal-data" for="personal">Я согласен/на на обработку персональных данных</label></div>
-                    <button>Отправить</button>
+                <form action="/home/index" method="post">
+                    <input type="text"
+                          name="name" value="<?=$_POST['name']?>" placeholder="Ваше имя">
+                    <input type="tel" name="phone" value="<?=$_POST['phone']?>" placeholder="Ваш номер телефона">
+                    <input type="email" name="email" value="<?=$_POST['email']?>" placeholder="Ваш email">
+                    <textarea name="message" placeholder="Ваш комментарий" rows="3"><?=$_POST['message']?></textarea>
+                    <div class="checkbox"><input type="checkbox" name="personal" value="<?=$_POST['personal']?>" id="personal"><label class="personal-data" for="personal">Я согласен/на на обработку персональных данных</label></div>
+                    <div class="error"><?=$data['message']?></div>
+                    <button id="send">Отправить</button>
                 </form>
             </div>
         </div>
