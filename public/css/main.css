@@ -1,8 +1,7 @@
 body {
     font-size: 14px;
     font-family: Verdana, Arial, sans-serif;
-    line-height: 20px;
-    background: #F9F9F9;
+    background: #DBF9F9;
     color: #494949;
 }
 
@@ -61,6 +60,10 @@ ul {
     justify-content: space-around;
     padding:  40px 0;
     border: #494949 solid 2px;
+    border-right: #494949 solid 4px;
+    border-bottom: #494949 solid 4px;
+    border-radius: 20px;
+    background: #FCDABD;
 }
 
 .info > div {
@@ -76,6 +79,7 @@ ul {
 
 .contact-form {
     margin-left: -40px;
+    width: 40%;
 }
 
 /*

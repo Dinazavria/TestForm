@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Тестовое задание 1</title>
     <link rel="stylesheet" href="/public/css/main.css">
+    <link rel="stylesheet" href="/public/css/popup.css">
     <link rel="stylesheet" href="/public/css/form.css">
     <link rel="stylesheet" href="/public/css/adaptive.css">
 </head>
@@ -34,19 +35,36 @@
             очевидна, что дальнейшее развитие различных форм деятельности представляет собой интересный эксперимент
             проверки направлений прогрессивного развития. Товарищи! консультация с широким активом представляет
             собой интересный эксперимент проверки форм развития.</p>
+    </div>
+    <div class="popup" id="popup">
+
+        <div class="popup-form">
+            <a href="javascript:PopUpHide()" id="hide">Скрыть</a>
+            <h1>Не нашли того, что искали?</h1>
+            <p>Оставьте свои контакты, и мы Вам перезвоним.</p>
+                <form action="/leads" method="post">
+                    <input type="text"
+                           name="name" value="<?=$_POST['name']?>" placeholder="Ваше имя">
+                    <input type="tel" name="phone" value="<?=$_POST['phone']?>" placeholder="Ваш номер телефона">
+                    <button id="send">Отправить</button>
+                </form>
+            </div>
+        </div>
 
     </div>
 </div>
-<?php //require 'public/blocks/footer.php' ?>
-
-<script
-        src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-        crossorigin="anonymous">
-</script>
-
+<a href="javascript:PopUpShow()">Show popup</a>
+<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
 <script>
-
+    $(document).ready(function(){
+        PopUpHide();
+    });
+    function PopUpShow(){
+        $("#popup").show();
+    }
+    function PopUpHide(){
+        $("#popup").hide();
+    }
 </script>
 
 </body>

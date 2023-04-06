@@ -14,7 +14,6 @@ input {
     line-height: 20px;
     color: #494949;
     background: none;
-    border: none;
     border-bottom: 2px solid #494949;
 }
 
@@ -48,10 +47,14 @@ button {
     font-size: 14px;
     font-family: Verdana, Arial, sans-serif;
     line-height: 20px;
-    background: #494949;
-    color: #D9D9D9;
-    border: none;
+    background: #CFE946;
+    color: #494949;
+    border: #494949 solid 2px;
+    border-right: #494949 solid 4px;
+    border-bottom: #494949 solid 4px;
+    border-radius: 20px;
     padding: 10px 0;
+    transition: 1s;
 }
 
 button:hover {
