@@ -2,7 +2,7 @@
 class DB {
     private static $_db = null;
 
-    public static function getInstsnce() {
+    public static function getInstance() {
         if(self::$_db == null)
             self::$_db = new PDO('mysql:host=localhost;dbname=forms', 'root', 'root');
 

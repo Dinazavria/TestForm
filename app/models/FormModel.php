@@ -6,19 +6,17 @@ class FormModel {
     private $phone;
     private $email;
     private $message;
-    private $personal;
-    private $_db;
+    private $_db = null;
 
     public function __construct() {
-        $this->_db = DB::getInstsnce();
+        $this->_db = DB::getInstance();
     }
 
-    public function setData($name, $phone, $email, $message, $personal) {
+    public function setData($name, $phone, $email, $message) {
         $this->name = $name;
         $this->phone = $phone;
         $this->email = $email;
         $this->message = $message;
-        $this->personal = $personal;
     }
 
     public function validForm() {
@@ -33,10 +31,10 @@ class FormModel {
     }
 
     public function addMessage() {
-        $sql = 'INSERT INTO messages(name, number, email, comment, personal) VALUES(:name, :number, :email, :comment, :personal)';
+        $sql = 'INSERT INTO messages(name, number, email, comment) VALUES(:name, :number, :email, :comment)';
         $query = $this->_db->prepare($sql);
 
-        $query->execute(['name'=>$this->name, 'number'=>$this->phone, 'email'=>$this->email, 'comment'=>$this->message, 'personal'=>$this->personal]);
+        $query->execute(['name'=>$this->name, 'number'=>$this->phone, 'email'=>$this->email, 'comment'=>$this->message]);
     }
 
 
