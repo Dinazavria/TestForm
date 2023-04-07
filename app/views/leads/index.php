@@ -5,13 +5,13 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Тестовое задание 1</title>
+    <title>Ловец лидов</title>
     <link rel="stylesheet" href="/public/css/main.css">
     <link rel="stylesheet" href="/public/css/popup.css">
     <link rel="stylesheet" href="/public/css/form.css">
     <link rel="stylesheet" href="/public/css/adaptive.css">
 </head>
-<body>
+<body onmouseleave="PopUpShow()">
 <?php require 'public/blocks/header.php' ?>
 <div class="container">
     <div class="content">
@@ -46,6 +46,7 @@
                     <input type="text"
                            name="name" value="<?=$_POST['name']?>" placeholder="Ваше имя">
                     <input type="tel" name="phone" value="<?=$_POST['phone']?>" placeholder="Ваш номер телефона">
+                    <div class="error"><?=$data['message']?></div>
                     <button id="send">Отправить</button>
                 </form>
             </div>
@@ -53,8 +54,7 @@
 
     </div>
 </div>
-<a href="javascript:PopUpShow()">Show popup</a>
-<script src="http://code.jquery.com/jquery-2.0.2.min.js"></script>
+<script src="/public/js/jquery-3.6.4.min.js"></script>
 <script>
     $(document).ready(function(){
         PopUpHide();

@@ -30,6 +30,14 @@ class FormModel {
             return "Сообщение отправлено";
     }
 
+    public function validContact() {
+        if(strlen($this->name)< 2) {
+            return "Слишком короткое имя";
+        }
+        else
+            return "Сообщение отправлено";
+    }
+
     public function addMessage() {
         $sql = 'INSERT INTO messages(name, number, email, comment) VALUES(:name, :number, :email, :comment)';
         $query = $this->_db->prepare($sql);
@@ -37,5 +45,11 @@ class FormModel {
         $query->execute(['name'=>$this->name, 'number'=>$this->phone, 'email'=>$this->email, 'comment'=>$this->message]);
     }
 
+    public function addContact() {
+        $sql = 'INSERT INTO leads(name, phone) VALUES(:name, :phone)';
+        $query = $this->_db->prepare($sql);
+
+        $query->execute(['name'=>$this->name, 'number'=>$this->phone]);
+    }
 
 }
